@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 30% 98%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 258 77% 74%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 260 25% 54%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 258 77% 74%;
+    
+    --radius: 1rem;
+  }
+  
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 258 77% 74%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    --secondary: 260 25% 54%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 258 77% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans transition-colors duration-300;
+    background-image: radial-gradient(circle at top right, 
+      hsl(var(--primary) / 0.1),
+      transparent 40%),
+      radial-gradient(circle at bottom left, 
+      hsl(var(--secondary) / 0.1),
+      transparent 40%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/20 dark:bg-black/20 backdrop-blur-lg border border-white/30 dark:border-white/10 shadow-xl;
+  }
+  
+  .neomorphic {
+    @apply bg-white/80 dark:bg-gray-800/80 
+          shadow-[6px_6px_12px_0px_rgba(0,0,0,0.1),-6px_-6px_12px_0px_rgba(255,255,255,0.8)] 
+          dark:shadow-[6px_6px_12px_0px_rgba(0,0,0,0.3),-6px_-6px_12px_0px_rgba(255,255,255,0.08)]
+          hover:shadow-[4px_4px_8px_0px_rgba(0,0,0,0.1),-4px_-4px_8px_0px_rgba(255,255,255,0.8)]
+          dark:hover:shadow-[4px_4px_8px_0px_rgba(0,0,0,0.3),-4px_-4px_8px_0px_rgba(255,255,255,0.08)]
+          transition-shadow duration-300 active:shadow-[inset_4px_4px_8px_0px_rgba(0,0,0,0.1),inset_-4px_-4px_8px_0px_rgba(255,255,255,0.8)]
+          dark:active:shadow-[inset_4px_4px_8px_0px_rgba(0,0,0,0.3),inset_-4px_-4px_8px_0px_rgba(255,255,255,0.08)];
+  }
+}
+
